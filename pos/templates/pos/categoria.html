@@ -1,0 +1,39 @@
+{% extends 'pos/plantilla.html' %}
+
+{% block content %}
+<div id="content">
+    <div class="panel box-shadow-none content-header">
+        <div class="panel-body">
+            <div class="col-md-12">
+                {% if form.nombre.value %}
+                    <h3 class="animated fadeInLeft">Editar Categoria</h3>
+                {% else %}
+                    <h3 class="animated fadeInLeft">Nueva Categoria</h3>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="col-md-12 panel">
+            <div class="col-md-12 panel-body" style="padding-bottom:30px;">
+                <div class="col-md-12">
+                    <form method="POST" class="cmxform">{% csrf_token %}
+                        <div class="col-md-12">
+                            <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                                {{ form.nombre }}
+                                <span class="bar"></span>
+                                <label>Categoria</label>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <a class="submit btn btn-danger" href="/categoria">Cancelar</a>
+                            <input class="submit btn btn-success" type="submit" value="Guardar">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

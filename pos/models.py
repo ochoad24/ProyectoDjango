@@ -5,5 +5,5 @@ class Categoria(models.Model):
     nombre=models.CharField(max_length=200)
     created_date=models.DateTimeField(default=timezone.now)
 
-def __str__(self):
-    return self.nombre
+    def __str__(self):
+        return self.nombre

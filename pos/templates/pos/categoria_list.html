@@ -7,6 +7,7 @@
        <div class="panel-body">
          <div class="col-md-12">
              <h3 class="animated fadeInLeft">Categoria</h3>
+             <a href="{% url 'categoria_nuevo' %}" class="btn btn-raised btn-success">Nuevo</a>
          </div>
        </div>
    </div>
@@ -27,7 +28,8 @@
             {% for categoria in categorias %} 
             <tr>
                <td>{{categoria.nombre}}</td>
-               <td>Aqui van los botones</td>
+               <td><a class="btn btn-raised btn-warning" href="{% url 'categoria_editar' pk=categoria.pk %}">Editar</a> | <a href="{% url 'categoria_eliminar' pk=categoria.pk %}" class="btn btn-raised btn-danger">Eliminar</a>
+              </td>
              </tr>
              {% endfor %}
            </tbody>
