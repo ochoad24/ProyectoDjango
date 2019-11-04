@@ -1,5 +1,5 @@
 from django import forms
-from .models import Categoria,Producto,Cliente
+from .models import Categoria,Producto,Cliente,Encabezado,Detalle
 
 class CategoriaForm(forms.ModelForm):
     nombre=forms.CharField(widget=forms.TextInput(attrs={'class':'form-text'}))
@@ -26,4 +26,16 @@ class ClienteForm(forms.ModelForm):
     class Meta:
         model=Cliente
         fields=("nombre","apellido","telefono","email","direccion",)
-    
+
+class EncabezadoForm(forms.ModelForm):
+    class Meta:
+        model=Encabezado
+        fields=("cliente","total","created_date","estado",)
+
+class DetalleForm(forms.ModelForm):
+    class Meta:
+        model=Detalle
+        fields=("producto","encabezado","subtotal","cantidad","precio_venta")
+            
+
+

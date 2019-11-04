@@ -41,11 +41,11 @@
                  <b>POS</b>
                 </a>
               <ul class="nav navbar-nav navbar-right user-nav">
-                <li class="user-name"><span>Daniel Ochoa</span></li>
+                <li class="user-name"><span>{{ user.username }}</span></li>
                   <li class="dropdown avatar-dropdown">
                    <img src="{% static 'img/avatar.jpg' %}" class="img-circle avatar" alt="user name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"/>
                    <ul class="dropdown-menu user-dropdown">
-                     <li><a href="#"><span class="fa fa-lock"></span>  Cerrar sesión</a></li>
+                     <li><a href="{% url 'logout' %}"><span class="fa fa-lock"></span>  Cerrar sesión</a></li>
                   </ul>
                 </li>
               </ul>
@@ -75,7 +75,7 @@
                       </ul>
                     </li>
                     <li><a href="/cliente">Clientes</a></li>
-                    <li><a href="/ventas">Ventas</a></li>
+                    <li><a href="/venta">Ventas</a></li>
                   </ul>
                 </div>
             </div>
